@@ -1,0 +1,37 @@
+# GraphQL schema representing the same functionality as the Swagger API
+
+# Root Query type
+type Query {
+  # Query to get client information by ID
+  client(id: ID!): Client
+
+  # Query to get a list of documents for a client by ID
+  clientDocuments(id: ID!): [Document]
+
+  # Query to get a list of relatives for a client by ID
+  clientRelatives(id: ID!): [Relative]
+}
+
+# Type representing a Client
+type Client {
+  id: ID!
+  name: String
+  age: Int
+}
+
+# Type representing a Document
+type Document {
+  id: ID!
+  type: String
+  number: String
+  issueDate: String
+  expiryDate: String
+}
+
+# Type representing a Relative
+type Relative {
+  id: ID!
+  relationType: String
+  name: String
+  age: Int
+}
